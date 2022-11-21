@@ -1,14 +1,9 @@
 const grid = document.querySelector(".grid");
 const spanPlayer = document.querySelector(".player");
 const timer = document.querySelector(".timer");
-// const btnPlayAgain = document.querySelector(".play-again");
-
-// btnPlayAgain.addEventListener("click", handleResetClick);
-document.addEventListener("keydown", function (e) {
-  if (e.key == "Enter" && screen1.classList.contains("hide")) {
-    handleResetClick();
-  }
-});
+const popupWrapper = document.querySelector(".popup-wrapper");
+const popupMessage = document.querySelector(".popup-card .title span");
+const btnPlayAgain = document.querySelector(".title .btn .play-again");
 
 function toggleScreen() {
   screen1.classList.toggle("hide");
@@ -42,15 +37,14 @@ const checkEndGame = () => {
 
   if (disabledCards.length === 20) {
     clearInterval(this.loop);
-    alert(
-      `Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${timer.innerHTML}`
-    );
+    const message = `Congratulations, ${spanPlayer.innerHTML}!
+    your time was: ${timer.innerHTML}`;
+
+    popupMessage.innerText = "";
+    popupMessage.innerText = message;
+    popupWrapper.classList.add("open");
   }
 };
-
-// const playAgain = () => {};
-
-// btnPlayAgain.addEventListener("click", playAgain);
 
 const checkCards = () => {
   const firstCharacter = firstCard.getAttribute("data-character");
@@ -74,6 +68,7 @@ const checkCards = () => {
     }, 500);
   }
 };
+
 const revealCard = ({ target }) => {
   if (target.parentNode.className.includes("reveal-card")) {
     return;
@@ -123,6 +118,10 @@ const startTimer = () => {
     timer.innerHTML = currentTime + 1;
   }, 1000);
 };
+
+function playAgain() {
+  window.location.reload();
+}
 
 window.onload = () => {
   spanPlayer.innerHTML = localStorage.getItem("player");

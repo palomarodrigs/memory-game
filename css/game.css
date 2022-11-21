@@ -34,7 +34,7 @@ header {
 .card {
   aspect-ratio: 3/4;
   width: 100%;
-  background-color: #ed213a;
+  background-color: #479d49;
   border-radius: 5px;
   position: relative;
   transition: all 400ms ease;
@@ -94,11 +94,12 @@ h2 {
 
 .popup-card {
   background-color: #192347;
-  padding: 40px;
+  padding: 60px;
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 0.2px 0.4px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 0.2px 0.4px rgba(0, 0, 0, 0.1); */
   align-items: center;
+  box-shadow: 10px 11px 32px -11px rgba(0, 0, 0, 0.56);
 }
 
 .play-again {
@@ -118,6 +119,7 @@ h2 {
 .play-again:hover {
   background-color: #ab4941;
   transform: scale(1.1);
+  transition: 0.3s ease-in-out;
 }
 
 span {

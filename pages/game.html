@@ -8,34 +8,34 @@
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/game.css" />
 
-    <script defer src="../js/game.js"></script>
-
     <title>Memory Game</title>
   </head>
   <body>
     <main>
       <header class="screen1">
         <span class="player"></span>
-        <span>Tempo: <span class="timer">00</span></span>
+        <span>Time: <span class="timer">00</span></span>
       </header>
 
-      <div class="grid">
-      </div>
-      <!-- <div class="screen2">
-        <div class="popup-wrapper open">
+      <div class="grid"></div>
+      <div class="screen2">
+        <div class="popup-wrapper">
           <div class="popup-card">
             <h2 class="title">
               <span>
-                Parabéns, player! <br />
-                seu tempo foi de: 00</span
+                Congratulations, player! <br />
+                your time was: 00</span
               >
               <div class="btn">
-                <button class="play-again">Jogar novamente</button>
-              </div> -->
+                <button onClick="playAgain()" class="play-again">
+                  Play again
+                </button>
+              </div>
             </h2>
           </div>
         </div>
       </div>
     </main>
+    <script src="../js/game.js"></script>
   </body>
 </html>
